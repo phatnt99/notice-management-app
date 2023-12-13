@@ -1,5 +1,7 @@
 # notice-management-app
 A Spring Boot based Notice Management Application
+
+![example workflow](https://github.com/phatnt99/notice-management-app/actions/workflows/maven.yml/badge.svg)
 ## Table of contents
 - [Features](#features)
 - [Core Technologies](#core-technoloies)
