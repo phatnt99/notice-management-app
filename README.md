@@ -79,7 +79,7 @@ After successfully run the application, please enter http://localhost:8080/swagg
 - Validate request payload, custom Validator provided (@ValidDateRange)
 - Global exception handler, custom Exceptions provided (NoticeViewFileException, UserAlreadyRegisteredException, AppGenericException)
 - Using Mapstruct as mapper engine
-- Using Flyway to provide powerful database integration and management
+- Using Flyway to provide powerful database migration
 - Using Springdoc OpenAPI to provide Swagger UI
 - Unit testing with JUnit
 
