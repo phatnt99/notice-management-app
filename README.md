@@ -95,11 +95,12 @@ After successfully run the application, please enter http://localhost:8080/swagg
 <a id="key-problem-solving-strategies"></a>
 ## Key problem solving strategies
 Following are some top key strategies that was applied in our application:
-- Prevent saving file content in the database (only store file metadata in the database for refering purpose), my current solution is using one folder (attachments) to simulate a simple file storage, but I recommeded to save the attachment files on the actual separate File Server (for instance, AWS S3, Google Cloud Storage) to free-up the space for the application. In addition, cloud provider services also provide addition caching, better management strategy and help us save more money while still stay stuned with top performance.
+- Prevent saving file content in the database (only store file metadata in the database for refering purpose), my current solution is using one folder (attachments) to simulate a simple file storage to improve the application performance, but I recommeded to save the attachment files on the actual separate File Server (for instance, AWS S3, Google Cloud Storage) to free-up the space for the application. In addition, cloud provider services also provide addition caching, better management strategy and help us save more money while still stay stuned with top performance.
 - Prevent permanent deletion. Currently I applied Soft delete strategy, which will use additional column is_deleted to indicate whether that resource is deleted or not, by using Hibernate supported @SQLDelete. Other action such as inquiry, update will first check the is_deleted column, by using Hibernate supported annotation @Filter.
 - Apply caching to robust the API response speeed. By using Spring Boot Cache, I applied caching for various methods (mostly for the inquiry data) to speed up the response time, using @Cachable. When entities were modifying (update, delete), using propriate annotation @CachePut (for updating) and @CacheEvict (for deleting) to update the caching data.
 - For searching Notice, currently JPA specification is used for easy write complex and flexible queries. When come in high volume traffic context, I would like to use ElasticSearch which is a powered search engine, we can save the DB connections go through main PostgresQL DB and speed up the search API since ElasticSearch is NoSQL bult-in.
 - 42 unit test cases were added to make sure basic workflow can run smoothly. Passed on Github Workflow.
+- The current source code was structured to make it more reuseble, highly maintainable and easily to write unit tests.
 
 For further improvement, I will consider following points:
 - Apply Microservice architecture
