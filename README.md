@@ -81,7 +81,7 @@ After successfully run the application, please enter http://localhost:8080/swagg
 - Using Mapstruct as mapper engine
 - Using Flyway to provide powerful database integration and management
 - Using Springdoc OpenAPI to provide Swagger UI
-- Unit testing with JUnit
+- Unit testing with JUnit (42 test cases was added)
 
 <a id="how-to-get-started"></a>
 ## How to get started
